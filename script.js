@@ -5,7 +5,7 @@ angular.module('movieApp', []).controller('movieCtrl',function($scope, $http){
   ];
   movieList.addTitle = function() {
     movieList.movies.push({text:movieList.movieTitle, url:"url"});
-    $http.get("http://www.omdbapi.com/?t=Frozen&y=&plot=short&r=json")
+    $http.get("http://www.omdbapi.com/?t=" + movieList.movieTitle + "&y=&plot=short&r=json")
     .success(function(response) {console.log(response)});
   }
 });
