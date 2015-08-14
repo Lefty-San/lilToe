@@ -1,0 +1,31 @@
+*{
+	font-family: sans-serif;
+}
+
+body{
+	width: 100vw;
+	background-color: black;
+	margin: 0;
+}
+form{
+	margin: 0 auto;
+	width: 100px;
+}
+section.container{
+	
+		color: grey;
+		font-size: 14pt;
+	}
+	ul{
+		text-decoration: none;
+		padding: 0;
+		width: 100vw;
+		li{
+			margin: 0 auto;
+			list-style: none;
+			h2{
+				color: white;
+			}
+		}
+	}
+}

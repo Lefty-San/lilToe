@@ -1,16 +1,34 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Movies</title>
-</head>
-<body ng-app="movieApp" ng-controller="movieCtrl as movieList">
-  <form ng-submit="movieList.addTitle()">
-    <input type="text" ng-model="movieList.movieTitle"  size="30"
-    placeholder="add new Title here">
-    <input class="btn-primary" type="submit" value="search">
-  </form>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
-  <script src="script.js"></script>
-</body>
+	<head manifest="cache.appcache">
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>Movies</title>
+		<link rel="stylesheet" type="text/css" href="./style.css">
+	</head>
+	<body ng-app="movieApp" ng-controller="movieCtrl as movieList">
+		<div class="logo"></div>
+		<div class="top-line">
+			<form ng-submit="movieList.addMovie()">
+				<input type="text" ng-model="movieList.movieSearch"  size="30"
+				placeholder="add new Title here" class="bar">
+				<input class="search" type="submit" value="search">
+			</form>
+			<input type="button" ng-click="movieList.clearMovies()" class="clear" value="clear">
+		</div>
+		<section class="container">
+			<h1>Search Results:</h1>
+			<ul>
+				<li ng-repeat="i in movieList.movies | orderBy:id:reverse">
+					<h2>{{i.Title}} {{i.Rated}}</h2>
+					<img ng-src="{{i.Poster}}">
+					<p>Description: {{i.Plot}}</p>
+					<input type="button" value="remove" ng-click="movieList.remove($index)">
+				</li>
+			</ul>
+		</section>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+		<script src="script.js"></script>
+	</body>
 </html>
