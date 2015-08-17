@@ -1,3 +1,14 @@
+loaded = function(){
+	if (window.matchMedia("(display-mode: standalone)").matches){
+		alert("Good Job!");
+	}
+	else{
+		alert("Ya done goofed");
+	}
+};
+
+window.onLoad = loaded;
+
 angular.module('movieApp', []).controller('movieCtrl',function($scope, $http){
 	var movieList = this;
 	console.log(localStorage);

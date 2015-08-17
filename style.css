@@ -107,3 +107,9 @@ section.container ul li input{
 	border-right: solid 5px;
 	border-color: #CC4F39;
 }
+
+@media all and (display-mode: standalone){
+	body{
+		background-color: red;
+	}
+}

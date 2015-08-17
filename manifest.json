@@ -1,7 +1,35 @@
 {
+  "app": {
+  	"background": {
+  		"scripts": [
+  			"script.js", 
+  			"https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"
+  		]
+  	}
+  },
+  "icons": [
+  	{
+  		"src": "thumb48.png",
+  		"sizes": "48x48",
+	  	"type": "image/png"
+	},
+	{
+	  	"src": "thumb128.png",
+  		"sizes": "128x128",
+	  	"type": "image/png"
+	},
+	{
+	  	"src": "thumb.png",
+  		"sizes": "144x144",
+	  	"type": "image/png"
+	}
+  ],
+  "manifest_version": 2,
+  "version": "2",
   "name": "Movies Application Manifest",
-  "icons": [],
+  "short_name": "Movies",
   "start_url": "index.html",
   "display": "standalone",
+  "offline_enabled": "true",
   "orientation": "portrait"
 }
