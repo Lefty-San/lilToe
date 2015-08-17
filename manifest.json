@@ -25,7 +25,7 @@
 	}
   ],
   "manifest_version": 2,
-  "version": "2",
+  "version": "0.1",
   "name": "Movies Application Manifest",
   "short_name": "Movies",
   "start_url": "index.html",

@@ -1,0 +1,10 @@
+CACHE MANIFEST
+#version: 0.1
+style.css
+LOGO.png
+script.js
+index.html
+thumb128.png
+thumb48.png
+thumb.png
+https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js
