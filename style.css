@@ -52,9 +52,15 @@ input:focus {outline:0;}
 	color: #4B322D;
 	padding-left: 10px;
 }
-.search, .clear{
+
+.butt.hidden{
+	display: none;
+}
+
+.search, .butt.show{
 	background-color: #FF6347;
 	border: none;
+	display: inline;
 	width: 100px;
 	height: 40px;
 	font-size: 20pt;
@@ -71,10 +77,13 @@ input:focus {outline:0;}
 	margin: 5px auto;
 	display: inherit;
 }
-section.container{
+section{
 	width: 90vw;
 	margin: 0 auto;
+	overflow-x: hidden;
 }
+
+/*my movies list*/
 section.container h1{
 	color: grey;
 	font-size: 14pt;
@@ -84,19 +93,41 @@ section.container ul{
 	padding: 0;
 	width: 100%;
 }
+.popUp{
+	position: fixed;
+	left: 0;
+	top: 20vh;
+	display: none;
+	background-color: rgba(0, 0, 0, 0.6);
+	padding-bottom: 30px;
+}
+section.container ul .clicked .popUp{
+	display: block;
+}
 section.container ul li{
 	margin: 0 auto;
 	list-style: none;
 }
 section.container ul li h2{
+	margin-left: 20px;
 	color: white;
+	display: inline-block;
+}
+.close{
+	margin-top: 10px;
+	margin-right: 20px;
+	float:right;
+}
+.add{
+	margin-left: 20px;
+	margin-top: 10px;
 }
 section.container ul li p{
 	background-color: #FFA898;
+	margin: 0 20px;
 	color: #4B322D;
 	padding: 5px;
 }
-
 section.container ul li input{
 	background-color: #FF6347;
 	border: none;
@@ -108,8 +139,71 @@ section.container ul li input{
 	border-color: #CC4F39;
 }
 
-@media all and (display-mode: standalone){
-	body{
-		background-color: red;
-	}
+/*search results*/
+.myMovies.shown{
+	display: block;
+}
+.myMovies.not-shown{
+	display: none;
+}
+section.myMovies{
+	background-color: #FFA898;
+}
+section.myMovies h1{
+	color: #4B322D;
+	font-size: 14pt;
+	margin-top: 0;
+	height: 10vw;
+	background-color: black;
+	color: white;
+}
+section.myMovies ul{
+	text-decoration: none;
+	padding: 0;
+	width: 100%;
+}
+section.myMovies ul li{
+	margin: 0 auto;
+	list-style: none;
+}
+section.myMovies ul li h2{
+	color: #4B322D;
+	margin-left: 25px;
+	display: inline-block;
+}
+section.myMovies ul li img{
+	display: block;
+	margin: 5px auto;
+}
+section.myMovies ul li.clicked p{
+	border: solid black;
+	border-width: 2px;
+	display: block;
+	width: 75%;
+	margin: 0 auto;
+	color: #4B322D;
+	padding: 5px;
+}
+section.myMovies ul li.un-clicked p{
+	display:none;
+}
+
+section.myMovies ul li input{
+	background-color: #FF6347;
+	border: none;
+	width: 100px;
+	height: 40px;
+	font-size: 20pt;
+	border-bottom: solid 5px;
+	border-right: solid 5px;
+	border-color: #CC4F39;
+	margin-top: 10px;
+	float: right;
+}
+section.myMovies .break{
+	width: 150vw;
+	height: 5px;
+	margin-left: -20vw;
+	margin-top: 20px;
+	background-color: black;
 }

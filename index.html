@@ -13,21 +13,36 @@
 	<body ng-app="movieApp" ng-controller="movieCtrl as movieList">
 		<div class="logo"></div>
 		<div class="top-line">
-			<form ng-submit="movieList.addMovie()">
+			<form ng-submit="movieList.search()">
 				<input type="text" ng-model="movieList.movieSearch"  size="30"
 				placeholder="add new Title here" class="bar">
 				<input class="search" type="submit" value="search">
 			</form>
-			<input type="button" ng-click="movieList.clearMovies()" class="clear" value="clear">
+			<input type="button" ng-click="movieList.toggleMyMovies()" value="My List" class="butt hidden">
 		</div>
+		<section class="myMovies not-shown">
+			<h1>My Movies:</h1>
+			<ul>
+				<li ng-repeat="i in movieList.movies" class="clicked">
+					<h2>{{i.title}}</h2>
+					<input type="button" value="remove" ng-click="movieList.remove($index)">
+					<img ng-src="{{i.poster_url}}">
+					<p>Description: {{i.plot}}</p>
+					<div class="break"></div>
+				</li>
+			</ul>
+		</section>
 		<section class="container">
 			<h1>Search Results:</h1>
 			<ul>
-				<li ng-repeat="i in movieList.movies | orderBy:id:reverse">
-					<h2>{{i.Title}} {{i.Rated}}</h2>
-					<img ng-src="{{i.Poster}}">
-					<p>Description: {{i.Plot}}</p>
-					<input type="button" value="remove" ng-click="movieList.remove($index)">
+				<li ng-repeat="i in movieList.results.results">
+					<img ng-src="http://image.tmdb.org/t/p/w300{{i.poster_path}}" class="poster">
+					<div class="popUp">
+						<h2>{{i.original_title}}</h2>
+						<input type="button" ng-click="movieList.close()" class="close" value="close">
+						<p>Description: {{i.overview}}</p>
+						<input class="add"type="button" value="add" ng-click="movieList.addMovie(i.id)">
+					</div>
 				</li>
 			</ul>
 		</section>
